@@ -159,7 +159,7 @@ macros.append(('PSUTIL_VERSION', int(VERSION.replace('.', ''))))
 
 # Py_LIMITED_API lets us create a single wheel which works with multiple
 # python versions, including unreleased ones.
-if setuptools and CP36_PLUS and (MACOS or LINUX) and not Py_GIL_DISABLED:
+if setuptools and CP36_PLUS and MACOS and not Py_GIL_DISABLED:
     py_limited_api = {"py_limited_api": True}
     options = {"bdist_wheel": {"py_limited_api": "cp36"}}
     macros.append(('Py_LIMITED_API', '0x03060000'))
@@ -322,7 +322,7 @@ if WINDOWS:
         # extra_link_args=["/DEBUG"],
         # fmt: off
         # python 2.7 compatibility requires no comma
-        **py_limited_api
+        # **py_limited_api
         # fmt: on
     )
 

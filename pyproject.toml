@@ -257,4 +257,4 @@ testpaths = ["psutil/tests/"]
 
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=43"]
+requires = ["setuptools>=43", "wheel"]
